@@ -52,9 +52,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tableLayoutPanel1
-            // 
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(
                 new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -102,148 +99,8 @@
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(432, 295);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // percentKey
-            // 
-            this.percentKey.Location = new System.Drawing.Point(261, 62);
-            this.percentKey.Name = "percentKey";
-            this.percentKey.Size = new System.Drawing.Size(65, 53);
-            this.percentKey.TabIndex = 21;
-            this.percentKey.Text = "%";
-            this.percentKey.UseVisualStyleBackColor = true;
-            // 
-            // equalKey
-            // 
-            this.equalKey.Location = new System.Drawing.Point(347, 239);
-            this.equalKey.Name = "equalKey";
-            this.equalKey.Size = new System.Drawing.Size(65, 53);
-            this.equalKey.TabIndex = 20;
-            this.equalKey.Text = "=";
-            this.equalKey.UseVisualStyleBackColor = true;
-            this.equalKey.Click += new System.EventHandler(this.buttonEqual_Click);
-            // 
-            // divideKey
-            // 
-            this.divideKey.Location = new System.Drawing.Point(347, 121);
-            this.divideKey.Name = "divideKey";
-            this.divideKey.Size = new System.Drawing.Size(65, 53);
-            this.divideKey.TabIndex = 16;
-            this.divideKey.Text = "/";
-            this.divideKey.UseVisualStyleBackColor = true;
-            // 
-            // minusKey
-            // 
-            this.minusKey.Location = new System.Drawing.Point(347, 180);
-            this.minusKey.Name = "minusKey";
-            this.minusKey.Size = new System.Drawing.Size(65, 53);
-            this.minusKey.TabIndex = 18;
-            this.minusKey.Text = "-";
-            this.minusKey.UseVisualStyleBackColor = true;
-            // 
-            // multipleKey
-            // 
-            this.multipleKey.Location = new System.Drawing.Point(261, 121);
-            this.multipleKey.Name = "multipleKey";
-            this.multipleKey.Size = new System.Drawing.Size(65, 53);
-            this.multipleKey.TabIndex = 17;
-            this.multipleKey.Text = "*";
-            this.multipleKey.UseVisualStyleBackColor = true;
-            // 
-            // numberKey2
-            // 
-            this.numberKey2.Location = new System.Drawing.Point(89, 180);
-            this.numberKey2.Name = "numberKey2";
-            this.numberKey2.Size = new System.Drawing.Size(65, 53);
-            this.numberKey2.TabIndex = 9;
-            this.numberKey2.Text = "2";
-            this.numberKey2.UseVisualStyleBackColor = true;
-            this.numberKey2.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // numberKey3
-            // 
-            this.numberKey3.Location = new System.Drawing.Point(175, 180);
-            this.numberKey3.Name = "numberKey3";
-            this.numberKey3.Size = new System.Drawing.Size(65, 53);
-            this.numberKey3.TabIndex = 13;
-            this.numberKey3.Text = "3";
-            this.numberKey3.UseVisualStyleBackColor = true;
-            this.numberKey3.Click += new System.EventHandler(this.buttonNu_Click);
-            // 
-            // numberKey5
-            // 
-            this.numberKey5.Location = new System.Drawing.Point(89, 121);
-            this.numberKey5.Name = "numberKey5";
-            this.numberKey5.Size = new System.Drawing.Size(65, 53);
-            this.numberKey5.TabIndex = 10;
-            this.numberKey5.Text = "5";
-            this.numberKey5.UseVisualStyleBackColor = true;
-            // 
-            // numberKey6
-            // 
-            this.numberKey6.Location = new System.Drawing.Point(175, 121);
-            this.numberKey6.Name = "numberKey6";
-            this.numberKey6.Size = new System.Drawing.Size(65, 53);
-            this.numberKey6.TabIndex = 14;
-            this.numberKey6.Text = "6";
-            this.numberKey6.UseVisualStyleBackColor = true;
-            // 
-            // numberKey7
-            // 
-            this.numberKey7.Location = new System.Drawing.Point(3, 62);
-            this.numberKey7.Name = "numberKey7";
-            this.numberKey7.Size = new System.Drawing.Size(65, 53);
-            this.numberKey7.TabIndex = 29;
-            this.numberKey7.Text = "7";
-            this.numberKey7.UseVisualStyleBackColor = true;
-            // 
-            // numberKey8
-            // 
-            this.numberKey8.Location = new System.Drawing.Point(89, 62);
-            this.numberKey8.Name = "numberKey8";
-            this.numberKey8.Size = new System.Drawing.Size(65, 53);
-            this.numberKey8.TabIndex = 30;
-            this.numberKey8.Text = "8";
-            this.numberKey8.UseVisualStyleBackColor = true;
-            // 
-            // numberKey9
-            // 
-            this.numberKey9.Location = new System.Drawing.Point(175, 62);
-            this.numberKey9.Name = "numberKey9";
-            this.numberKey9.Size = new System.Drawing.Size(65, 53);
-            this.numberKey9.TabIndex = 31;
-            this.numberKey9.Text = "9";
-            this.numberKey9.UseVisualStyleBackColor = true;
-            // 
-            // changeSignKey
-            // 
-            this.changeSignKey.Location = new System.Drawing.Point(347, 62);
-            this.changeSignKey.Name = "changeSignKey";
-            this.changeSignKey.Size = new System.Drawing.Size(65, 53);
-            this.changeSignKey.TabIndex = 32;
-            this.changeSignKey.Text = "+ / -";
-            this.changeSignKey.UseVisualStyleBackColor = true;
-            this.changeSignKey.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // numberKey4
-            // 
-            this.numberKey4.Location = new System.Drawing.Point(3, 121);
-            this.numberKey4.Name = "numberKey4";
-            this.numberKey4.Size = new System.Drawing.Size(65, 53);
-            this.numberKey4.TabIndex = 33;
-            this.numberKey4.Text = "4";
-            this.numberKey4.UseVisualStyleBackColor = true;
-            // 
-            // numberKey1
-            // 
-            this.numberKey1.Location = new System.Drawing.Point(3, 180);
-            this.numberKey1.Name = "numberKey1";
-            this.numberKey1.Size = new System.Drawing.Size(65, 53);
-            this.numberKey1.TabIndex = 34;
-            this.numberKey1.Text = "1";
-            this.numberKey1.UseVisualStyleBackColor = true;
-            // 
-            // numberKey0
-            // 
+            
+            // 数字キー
             this.numberKey0.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (128)));
             this.numberKey0.Location = new System.Drawing.Point(3, 239);
@@ -252,19 +109,90 @@
             this.numberKey0.TabIndex = 25;
             this.numberKey0.Text = "0";
             this.numberKey0.UseVisualStyleBackColor = true;
-            this.numberKey0.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // numberKey00
-            // 
+            this.numberKey0.Click += new System.EventHandler(this.numberKey0_click);
+            
+            this.numberKey1.Location = new System.Drawing.Point(3, 180);
+            this.numberKey1.Name = "numberKey1";
+            this.numberKey1.Size = new System.Drawing.Size(65, 53);
+            this.numberKey1.TabIndex = 34;
+            this.numberKey1.Text = "1";
+            this.numberKey1.UseVisualStyleBackColor = true;
+            this.numberKey1.Click += new System.EventHandler(this.numberKey1_click);
+            
+            this.numberKey2.Location = new System.Drawing.Point(89, 180);
+            this.numberKey2.Name = "numberKey2";
+            this.numberKey2.Size = new System.Drawing.Size(65, 53);
+            this.numberKey2.TabIndex = 9;
+            this.numberKey2.Text = "2";
+            this.numberKey2.UseVisualStyleBackColor = true;
+            this.numberKey2.Click += new System.EventHandler(this.numberKey2_click);
+            
+            this.numberKey3.Location = new System.Drawing.Point(175, 180);
+            this.numberKey3.Name = "numberKey3";
+            this.numberKey3.Size = new System.Drawing.Size(65, 53);
+            this.numberKey3.TabIndex = 13;
+            this.numberKey3.Text = "3";
+            this.numberKey3.UseVisualStyleBackColor = true;
+            this.numberKey3.Click += new System.EventHandler(this.numberKey3_click);
+            
+            this.numberKey4.Location = new System.Drawing.Point(3, 121);
+            this.numberKey4.Name = "numberKey4";
+            this.numberKey4.Size = new System.Drawing.Size(65, 53);
+            this.numberKey4.TabIndex = 33;
+            this.numberKey4.Text = "4";
+            this.numberKey4.UseVisualStyleBackColor = true;
+            this.numberKey4.Click += new System.EventHandler(this.numberKey4_click);
+            
+            this.numberKey5.Location = new System.Drawing.Point(89, 121);
+            this.numberKey5.Name = "numberKey5";
+            this.numberKey5.Size = new System.Drawing.Size(65, 53);
+            this.numberKey5.TabIndex = 10;
+            this.numberKey5.Text = "5";
+            this.numberKey5.UseVisualStyleBackColor = true;
+            this.numberKey5.Click += new System.EventHandler(this.numberKey5_click);
+            
+            this.numberKey6.Location = new System.Drawing.Point(175, 121);
+            this.numberKey6.Name = "numberKey6";
+            this.numberKey6.Size = new System.Drawing.Size(65, 53);
+            this.numberKey6.TabIndex = 14;
+            this.numberKey6.Text = "6";
+            this.numberKey6.UseVisualStyleBackColor = true;
+            this.numberKey6.Click += new System.EventHandler(this.numberKey6_click);
+            
+            this.numberKey7.Location = new System.Drawing.Point(3, 62);
+            this.numberKey7.Name = "numberKey7";
+            this.numberKey7.Size = new System.Drawing.Size(65, 53);
+            this.numberKey7.TabIndex = 29;
+            this.numberKey7.Text = "7";
+            this.numberKey7.UseVisualStyleBackColor = true;
+            this.numberKey7.Click += new System.EventHandler(this.numberKey7_click);
+            
+            this.numberKey8.Location = new System.Drawing.Point(89, 62);
+            this.numberKey8.Name = "numberKey8";
+            this.numberKey8.Size = new System.Drawing.Size(65, 53);
+            this.numberKey8.TabIndex = 30;
+            this.numberKey8.Text = "8";
+            this.numberKey8.UseVisualStyleBackColor = true;
+            this.numberKey8.Click += new System.EventHandler(this.numberKey8_click);
+            
+            this.numberKey9.Location = new System.Drawing.Point(175, 62);
+            this.numberKey9.Name = "numberKey9";
+            this.numberKey9.Size = new System.Drawing.Size(65, 53);
+            this.numberKey9.TabIndex = 31;
+            this.numberKey9.Text = "9";
+            this.numberKey9.UseVisualStyleBackColor = true;
+            this.numberKey9.Click += new System.EventHandler(this.numberKey9_click);
+            
+            // 00キー
             this.numberKey00.Location = new System.Drawing.Point(89, 239);
             this.numberKey00.Name = "numberKey00";
             this.numberKey00.Size = new System.Drawing.Size(65, 53);
             this.numberKey00.TabIndex = 12;
             this.numberKey00.Text = "00";
             this.numberKey00.UseVisualStyleBackColor = true;
-            // 
-            // plusKey
-            // 
+            this.numberKey00.Click += new System.EventHandler(this.numberKey00_click);
+            
+            // 四則計算キー
             this.plusKey.Location = new System.Drawing.Point(261, 180);
             this.plusKey.Name = "plusKey";
             this.tableLayoutPanel1.SetRowSpan(this.plusKey, 2);
@@ -272,27 +200,71 @@
             this.plusKey.TabIndex = 36;
             this.plusKey.Text = "+";
             this.plusKey.UseVisualStyleBackColor = true;
-            this.plusKey.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // pointKey
-            // 
+            this.plusKey.Click += new System.EventHandler(this.plusKey_click);
+            
+            this.minusKey.Location = new System.Drawing.Point(347, 180);
+            this.minusKey.Name = "minusKey";
+            this.minusKey.Size = new System.Drawing.Size(65, 53);
+            this.minusKey.TabIndex = 18;
+            this.minusKey.Text = "-";
+            this.minusKey.UseVisualStyleBackColor = true;            
+            this.minusKey.Click += new System.EventHandler(this.minusKey_click);
+            
+            this.multipleKey.Location = new System.Drawing.Point(261, 121);
+            this.multipleKey.Name = "multipleKey";
+            this.multipleKey.Size = new System.Drawing.Size(65, 53);
+            this.multipleKey.TabIndex = 17;
+            this.multipleKey.Text = "*";
+            this.multipleKey.UseVisualStyleBackColor = true;
+            this.multipleKey.Click += new System.EventHandler(this.multipleKey_click);
+            
+            this.divideKey.Location = new System.Drawing.Point(347, 121);
+            this.divideKey.Name = "divideKey";
+            this.divideKey.Size = new System.Drawing.Size(65, 53);
+            this.divideKey.TabIndex = 16;
+            this.divideKey.Text = "/";
+            this.divideKey.UseVisualStyleBackColor = true;
+            this.divideKey.Click += new System.EventHandler(this.divideKey_click);
+            
+            // その他のボタン
+            this.equalKey.Location = new System.Drawing.Point(347, 239);
+            this.equalKey.Name = "equalKey";
+            this.equalKey.Size = new System.Drawing.Size(65, 53);
+            this.equalKey.TabIndex = 20;
+            this.equalKey.Text = "=";
+            this.equalKey.UseVisualStyleBackColor = true;
+            this.equalKey.Click += new System.EventHandler(this.equalKey_click);
+            
+            this.percentKey.Location = new System.Drawing.Point(261, 62);
+            this.percentKey.Name = "percentKey";
+            this.percentKey.Size = new System.Drawing.Size(65, 53);
+            this.percentKey.TabIndex = 21;
+            this.percentKey.Text = "%";
+            this.percentKey.UseVisualStyleBackColor = true;
+            this.percentKey.Click += new System.EventHandler(this.percentKey_click);            
+            
             this.pointKey.Location = new System.Drawing.Point(175, 239);
             this.pointKey.Name = "pointKey";
             this.pointKey.Size = new System.Drawing.Size(65, 53);
             this.pointKey.TabIndex = 8;
             this.pointKey.Text = ".";
             this.pointKey.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
+            this.pointKey.Click += new System.EventHandler(this.pointKey_click);
+            
+            this.changeSignKey.Location = new System.Drawing.Point(347, 62);
+            this.changeSignKey.Name = "changeSignKey";
+            this.changeSignKey.Size = new System.Drawing.Size(65, 53);
+            this.changeSignKey.TabIndex = 32;
+            this.changeSignKey.Text = "+ / -";
+            this.changeSignKey.UseVisualStyleBackColor = true;
+            this.changeSignKey.Click += new System.EventHandler(this.changeSignKey_click);
+
+            // 数値表示用テキストボックス
             this.textBox1.Location = new System.Drawing.Point(8, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(431, 25);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // Form1
-            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(452, 428);
