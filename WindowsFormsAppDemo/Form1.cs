@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
+using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace WindowsFormsAppDemo
 {
     public partial class Form1 : Form
     {
+        #region UIへのイベント割り当て
         public Form1() {
             InitializeComponent();
         }
@@ -13,16 +17,7 @@ namespace WindowsFormsAppDemo
         private void Form1_Load(object sender, EventArgs e) {
             //throw new System.NotImplementedException(); 
         }
-        private void textBox1_TextChanged(object sender, EventArgs e) {
-            //throw new System.NotImplementedException();
-        }
         
-        private void pressNumberKey(int pressedNumber) {
-            // 動作確認用。実装はまだない
-            MessageBox.Show(pressedNumber + "が押されました。", "Message"
-                , MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
         #region 数字のボタン
         private void numberKey0_click(object sender, EventArgs e) {
             this.pressNumberKey(0);
@@ -64,11 +59,6 @@ namespace WindowsFormsAppDemo
             this.pressNumberKey(9);
         }
         
-        private void numberKey00_click(object sender, EventArgs e) {
-            this.pressNumberKey(0);
-            this.pressNumberKey(0);
-        }
-        
         #endregion
         
         #region 四則計算ボタン
@@ -95,8 +85,7 @@ namespace WindowsFormsAppDemo
         
         #region その他のボタン
         private void pointKey_click(object sender, EventArgs e) {
-            MessageBox.Show(".が押されました。", "Message"
-                , MessageBoxButtons.OK, MessageBoxIcon.Error);
+            addDecimalPoint();
         }
         
         private void equalKey_click(object sender, EventArgs e) {
@@ -105,16 +94,91 @@ namespace WindowsFormsAppDemo
         }
         
         private void changeSignKey_click(object sender, EventArgs e) {
-            MessageBox.Show("+ / - が押されました。", "Message"
-                , MessageBoxButtons.OK, MessageBoxIcon.Error);
+            toggleSign();
         }
         
         private void percentKey_click(object sender, EventArgs e) {
-            MessageBox.Show("%が押されました。", "Message"
-                , MessageBoxButtons.OK, MessageBoxIcon.Error);
+            percent();
         }
 
+        private void clearKey_Click(object sender, EventArgs e) {
+            clear();
+        }
         #endregion
         
+        #endregion
+        
+        // 最大桁数
+        private const int MAX_LENGTH = 12;
+
+        // 演算子候補
+        private enum Operations {
+            None,
+            Plus,
+            Minus,
+            Multiple,
+            Divide
+        };
+        
+        // 予約中の演算子
+        private Operations reservedOperation;
+        
+        // 保持中の値
+        private decimal register = 0M;
+        
+        
+        private string getDisplayValue() {
+            return textBox1.Text;
+        }
+
+        private void setDisplayValue(string value) {
+            
+            // 小数点や符号を除く、文字数を桁数としてカウントし、最大長を超えていないかチェック
+            int numberOfDigit = value.Replace("-", "").Replace(".", "").Length;
+            if (numberOfDigit >= MAX_LENGTH) {
+                return;
+            }
+            textBox1.Text = value;
+        }
+        
+        private void pressNumberKey(int pressedNumber) {
+            string currentNumberString = getDisplayValue();
+            if (pointFlag && !currentNumberString.Contains(".")) {
+                currentNumberString += ".";
+                pointFlag = false;
+            }
+            setDisplayValue(currentNumberString + pressedNumber);
+        }
+
+        private bool pointFlag = false;
+        private void addDecimalPoint() {
+            pointFlag = true;
+        }
+        
+        private void clear() {
+            textBox1.Text = "0";
+        }
+
+        private void toggleSign() {
+            decimal value = Decimal.Negate(Decimal.Parse(getDisplayValue()));
+            setDisplayValue(value.ToString());
+        }
+
+        private void percent() {
+            decimal value = Decimal.Parse(getDisplayValue()) / 100M;
+            setDisplayValue(value.ToString());
+        }
     }
+
+    public class myButtonObject : UserControl {
+        // Draw the new button
+        protected override void OnPaint(PaintEventArgs e) {
+            Graphics graphics = e.Graphics;
+            Pen myPen = new Pen(Color.Black);
+            graphics.DrawEllipse(myPen, 0, 0, 100, 100);
+            myPen.Dispose();
+        }
+    }
+    
+    
 }
