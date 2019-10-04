@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace WindowsFormsAppDemo
@@ -21,114 +16,114 @@ namespace WindowsFormsAppDemo
         
         #region 数字のボタン
         private void numberKey0_click(object sender, EventArgs e) {
-            this.pressNumberKey(0);
-            recentPressedKeyCategory = KeyCategory.Number;
+            this.PressNumberKey(0);
+            _recentPressedKeyCategory = KeyCategory.Number;
         }
 
         private void numberKey1_click(object sender, EventArgs e) {
-            this.pressNumberKey(1);
-            recentPressedKeyCategory = KeyCategory.Number;
+            this.PressNumberKey(1);
+            _recentPressedKeyCategory = KeyCategory.Number;
         }
         
         private void numberKey2_click(object sender, EventArgs e) {
-            this.pressNumberKey(2);
-            recentPressedKeyCategory = KeyCategory.Number;
+            this.PressNumberKey(2);
+            _recentPressedKeyCategory = KeyCategory.Number;
         }
         
         private void numberKey3_click(object sender, EventArgs e) {
-            this.pressNumberKey(3);
-            recentPressedKeyCategory = KeyCategory.Number;
+            this.PressNumberKey(3);
+            _recentPressedKeyCategory = KeyCategory.Number;
         }
         
         private void numberKey4_click(object sender, EventArgs e) {
-            this.pressNumberKey(4);
-            recentPressedKeyCategory = KeyCategory.Number;
+            this.PressNumberKey(4);
+            _recentPressedKeyCategory = KeyCategory.Number;
         }
         
         private void numberKey5_click(object sender, EventArgs e) {
-            this.pressNumberKey(5);
-            recentPressedKeyCategory = KeyCategory.Number;
+            this.PressNumberKey(5);
+            _recentPressedKeyCategory = KeyCategory.Number;
         }
         
         private void numberKey6_click(object sender, EventArgs e) {
-            this.pressNumberKey(6);
-            recentPressedKeyCategory = KeyCategory.Number;
+            this.PressNumberKey(6);
+            _recentPressedKeyCategory = KeyCategory.Number;
         }
         
         private void numberKey7_click(object sender, EventArgs e) {
-            this.pressNumberKey(7);
-            recentPressedKeyCategory = KeyCategory.Number;
+            this.PressNumberKey(7);
+            _recentPressedKeyCategory = KeyCategory.Number;
         }
         
         private void numberKey8_click(object sender, EventArgs e) {
-            this.pressNumberKey(8);
-            recentPressedKeyCategory = KeyCategory.Number;
+            this.PressNumberKey(8);
+            _recentPressedKeyCategory = KeyCategory.Number;
         }
         
         private void numberKey9_click(object sender, EventArgs e) {
-            this.pressNumberKey(9);
-            recentPressedKeyCategory = KeyCategory.Number;
+            this.PressNumberKey(9);
+            _recentPressedKeyCategory = KeyCategory.Number;
         }
         
         #endregion
         
         #region 四則計算ボタン
         private void plusKey_click(object sender, EventArgs e) {
-            reservedOperation = Operations.Plus;
-            register = Decimal.Parse(getDisplayValue());
-            recentPressedKeyCategory = KeyCategory.Operation;
+            _reservedOperation = Operations.Plus;
+            _register = Decimal.Parse(GetDisplayValue());
+            _recentPressedKeyCategory = KeyCategory.Operation;
         }
         
         private void minusKey_click(object sender, EventArgs e) {
-            reservedOperation = Operations.Minus;
-            register = Decimal.Parse(getDisplayValue());
-            recentPressedKeyCategory = KeyCategory.Operation;
+            _reservedOperation = Operations.Minus;
+            _register = Decimal.Parse(GetDisplayValue());
+            _recentPressedKeyCategory = KeyCategory.Operation;
         }
         
         private void multipleKey_click(object sender, EventArgs e) {
-            reservedOperation = Operations.Multiple;
-            register = Decimal.Parse(getDisplayValue());
-            recentPressedKeyCategory = KeyCategory.Operation;
+            _reservedOperation = Operations.Multiple;
+            _register = Decimal.Parse(GetDisplayValue());
+            _recentPressedKeyCategory = KeyCategory.Operation;
         }
         
         private void divideKey_click(object sender, EventArgs e) {
-            reservedOperation = Operations.Divide;
-            register = Decimal.Parse(getDisplayValue());
-            recentPressedKeyCategory = KeyCategory.Operation;
+            _reservedOperation = Operations.Divide;
+            _register = Decimal.Parse(GetDisplayValue());
+            _recentPressedKeyCategory = KeyCategory.Operation;
         }
         #endregion
         
         #region その他のボタン
         private void pointKey_click(object sender, EventArgs e) {
-            addDecimalPoint();
-            recentPressedKeyCategory = KeyCategory.Other;
+            AddDecimalPoint();
+            _recentPressedKeyCategory = KeyCategory.Other;
         }
         
         private void equalKey_click(object sender, EventArgs e) {
-            recentPressedKeyCategory = KeyCategory.Equal;
-            operation();
+            _recentPressedKeyCategory = KeyCategory.Equal;
+            Operation();
         }
         
         private void changeSignKey_click(object sender, EventArgs e) {
-            toggleSign();
-            recentPressedKeyCategory = KeyCategory.Other;
+            ToggleSign();
+            _recentPressedKeyCategory = KeyCategory.Other;
         }
         
         private void percentKey_click(object sender, EventArgs e) {
-            percent();
-            recentPressedKeyCategory = KeyCategory.Other;
+            Percent();
+            _recentPressedKeyCategory = KeyCategory.Other;
         }
 
         private void clearKey_Click(object sender, EventArgs e) {
-            clear();
-            recentPressedKeyCategory = KeyCategory.Other;
+            Clear();
+            _recentPressedKeyCategory = KeyCategory.Other;
         }
         #endregion
         
         #endregion
         
         // 最大桁数
-        private const int MAX_LENGTH = 12;
+        private const int MaxLength = 12;
 
         // 演算子候補
         private enum Operations {
@@ -140,7 +135,7 @@ namespace WindowsFormsAppDemo
         };
         
         // 予約中の演算子
-        private Operations reservedOperation;
+        private Operations _reservedOperation;
         
         // キーの種類
         private enum KeyCategory {
@@ -151,86 +146,86 @@ namespace WindowsFormsAppDemo
         }
         
         // 最後に押されたキーの種類
-        private KeyCategory recentPressedKeyCategory = KeyCategory.Other;
+        private KeyCategory _recentPressedKeyCategory = KeyCategory.Other;
                 
         // 保持中の値
-        private decimal register = 0M;
+        private decimal _register = 0M;
         
         
         
-        private string getDisplayValue() {
+        private string GetDisplayValue() {
             return textBox1.Text;
         }
 
-        private void setDisplayValue(string value) {
+        private void SetDisplayValue(string value) {
             
             // 小数点や符号を除く、文字数を桁数としてカウントし、最大長を超えていないかチェック
             int numberOfDigit = value.Replace("-", "").Replace(".", "").Length;
-            if (numberOfDigit >= MAX_LENGTH) {
+            if (numberOfDigit >= MaxLength) {
                 return;
             }
             textBox1.Text = value;
         }
         
-        private void pressNumberKey(int pressedNumber) {
-            if (recentPressedKeyCategory == KeyCategory.Operation) {
-                setDisplayValue("0");
+        private void PressNumberKey(int pressedNumber) {
+            if (_recentPressedKeyCategory == KeyCategory.Operation) {
+                SetDisplayValue("0");
             }
-            string currentNumberString = getDisplayValue();
-            if (pointFlag && !currentNumberString.Contains(".")) {
+            string currentNumberString = GetDisplayValue();
+            if (_pointFlag && !currentNumberString.Contains(".")) {
                 currentNumberString += ".";
-                pointFlag = false;
+                _pointFlag = false;
             }
 
             string newNumberString = currentNumberString + pressedNumber;
             decimal newNumber = decimal.Parse(newNumberString); 
-            setDisplayValue(newNumber.ToString());
+            SetDisplayValue(newNumber.ToString());
         }
 
-        private bool pointFlag = false;
-        private void addDecimalPoint() {
-            pointFlag = true;
+        private bool _pointFlag = false;
+        private void AddDecimalPoint() {
+            _pointFlag = true;
         }
         
-        private void clear() {
+        private void Clear() {
             textBox1.Text = "0";
-            pointFlag = false;
-            register = 0;
+            _pointFlag = false;
+            _register = 0;
         }
 
-        private void toggleSign() {
-            decimal value = Decimal.Negate(Decimal.Parse(getDisplayValue()));
-            setDisplayValue(value.ToString());
+        private void ToggleSign() {
+            decimal value = Decimal.Negate(Decimal.Parse(GetDisplayValue()));
+            SetDisplayValue(value.ToString());
         }
 
-        private void percent() {
-            decimal value = Decimal.Parse(getDisplayValue()) / 100M;
-            setDisplayValue(value.ToString());
+        private void Percent() {
+            decimal value = Decimal.Parse(GetDisplayValue()) / 100M;
+            SetDisplayValue(value.ToString());
         }
 
-        private void operation() {
+        private void Operation() {
             // 一度Doubleにキャストしているのは、小数点以下の不要なゼロを消すため
-            decimal beforeValue = (decimal)(double)Decimal.Parse(getDisplayValue());
+            decimal beforeValue = (decimal)(double)Decimal.Parse(GetDisplayValue());
             decimal resultValue;
-            switch(reservedOperation) {
+            switch(_reservedOperation) {
                 case Operations.Plus:
-                    resultValue = register + beforeValue;
+                    resultValue = _register + beforeValue;
                     break;
                 case Operations.Minus:
-                    resultValue = register - beforeValue;
+                    resultValue = _register - beforeValue;
                     break;
                 case Operations.Divide:
-                    resultValue = register / beforeValue;
+                    resultValue = _register / beforeValue;
                     break;
                 case Operations.Multiple:
-                    resultValue = register * beforeValue;
+                    resultValue = _register * beforeValue;
                     break;
                 default:
                     resultValue = beforeValue;
                     break;
             }
 
-            setDisplayValue(resultValue.ToString());
+            SetDisplayValue(resultValue.ToString());
         }
     }
 }
