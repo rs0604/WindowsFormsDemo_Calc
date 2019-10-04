@@ -204,8 +204,7 @@ namespace WindowsFormsAppDemo
         }
 
         private void Operation() {
-            // 一度Doubleにキャストしているのは、小数点以下の不要なゼロを消すため
-            decimal beforeValue = (decimal)(double)Decimal.Parse(GetDisplayValue());
+            decimal beforeValue = Decimal.Parse(GetDisplayValue());
             decimal resultValue;
             switch(_reservedOperation) {
                 case Operations.Plus:
@@ -224,7 +223,10 @@ namespace WindowsFormsAppDemo
                     resultValue = beforeValue;
                     break;
             }
-
+            
+            // 一度Doubleにキャストしているのは、小数点以下の不要なゼロを消すため
+            resultValue = (decimal) (double) resultValue;
+            _register = 0; // 定数計算は実装しない。
             SetDisplayValue(resultValue.ToString());
         }
     }
